@@ -1,0 +1,123 @@
+<div class="title-container">
+  <h1 class="title">User Management</h1>
+</div>
+<div class="user-container">
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div>
+      <label for="firstName">First Name</label>
+      <input
+        id="firstName"
+        type="text"
+        pInputText
+        formControlName="firstName"
+      />
+      @if (userForm.controls['firstName'].invalid &&
+      userForm.controls['firstName'].touched) {
+      <div>
+        @if (userForm.controls['firstName'].errors?.['required']) {
+        <small>First Name is required.</small>
+        } @if (userForm.controls['firstName'].errors?.['maxLength']) {
+        <small>First Name cannot exceed 50 characters.</small>
+        }
+      </div>
+      }
+    </div>
+    <div>
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" pInputText formControlName="lastName" />
+      @if (userForm.controls['lastName'].invalid &&
+      userForm.controls['lastName'].touched) {
+      <div>
+        @if (userForm.controls['lastName'].errors?.['required']) {
+        <small>Last Name is required.</small>
+        } @if (userForm.controls['lastName'].errors?.['maxLength']) {
+        <small>Last Name cannot exceed 50 characters.</small>
+        }
+      </div>
+      }
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" pInputText formControlName="email" />
+      @if (userForm.controls['email'].invalid &&
+      userForm.controls['email'].touched) {
+      <div>
+        @if (userForm.controls['email'].errors?.['required']) {
+        <small>Email is required.</small>
+        } @if (userForm.controls['email'].errors?.['email']) {
+        <small>Email must be valid.</small>
+        } @if (userForm.controls['email'].errors?.['maxLength']) {
+        <small>Email cannot exceed 50 characters.</small>
+        }
+      </div>
+      }
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        pInputText
+        formControlName="password"
+      />
+      @if (userForm.controls['password'].invalid &&
+      userForm.controls['password'].touched) {
+      <div>
+        @if (userForm.controls['password'].errors?.['required']) {
+        <small>Password is required.</small>
+        } @if (userForm.controls['password'].errors?.['minLength']) {
+        <small>Password needs to be at least 8 characters long.</small>
+        } @if (userForm.controls['password'].errors?.['passwordStrength']) {
+        <small>Password not strong enough.</small>
+        }
+      </div>
+      }
+    </div>
+    <div style="width: 100%">
+      <label for="roles">Roles</label>
+      <p-multiSelect
+        id="roles"
+        [options]="multiSelectOptions"
+        formControlName="roles"
+      />
+    </div>
+    <div class="two-buttons">
+      <p-button type="submit">{{ isEdit ? "Update" : "Add" }} User</p-button>
+      <p-button type="button" severity="secondary" (click)="resetForm()"
+        >Reset</p-button
+      >
+    </div>
+  </form>
+
+  <div class="table-container">
+    <p-table [value]="users" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Roles</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            {{ user.roles.length === 0 ? "No roles" : user.roles.join(", ") }}
+          </td>
+          <td class="two-buttons">
+            <p-button icon="pi pi-pencil" (click)="editUser(user)" />
+            <p-button
+              icon="pi pi-times"
+              severity="danger"
+              (click)="deleteUser(user.id!)"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

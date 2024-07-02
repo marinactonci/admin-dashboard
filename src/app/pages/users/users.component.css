@@ -1,0 +1,47 @@
+.title-container {
+    padding: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title {
+    margin: 0;
+}
+
+.user-container {
+    padding: 20px;
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    align-self: flex-start;
+    margin-right: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+small {
+    color: red;
+}
+
+.two-buttons {
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+}
+
+.table-container {
+    margin-top: 20px;
+}

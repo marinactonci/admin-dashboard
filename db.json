@@ -1,0 +1,14 @@
+{
+  "paymentOrders": [],
+  "users": [
+    {
+      "id": "1c18",
+      "firstName": "Tonči",
+      "lastName": "Marinac",
+      "email": "toncimarinac@gmail.com",
+      "password": "9X7ArMtV!",
+      "roles": [],
+      "createdOn": "2024-07-02T23:03:13.738Z"
+    }
+  ]
+}

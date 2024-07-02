@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  app-sidebar {
+    width: 250px;
+    max-width: 250px;
+    min-width: 250px;
+    background-color: #343a40; /* Dark background color for sidebar */
+    color: white;
+  }
+  
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f8f9fa; /* Light background color for content area */
+  }
+  
