@@ -1,0 +1,13 @@
+.title-container {
+    padding: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title {
+    margin: 0;
+}
+
+.home-container {
+    padding: 20px;
+    margin: 20px;
+}

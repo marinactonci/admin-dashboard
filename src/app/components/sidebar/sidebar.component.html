@@ -1,28 +1,35 @@
-<nav class="sidebar">
-  <ul>
-    <li>
-      <a
-        routerLink="/home"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Home</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/payment-orders"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Orders</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/users"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Users</a
-      >
-    </li>
-  </ul>
-</nav>
+<div class="sidebar-container">
+  <div routerLink="/home">
+    <i class="pi pi-clipboard"></i>
+    <h1>Dashboard</h1>
+  </div>
+  <nav class="sidebar">
+    <a
+      class="link"
+      routerLink="/home"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <i class="pi pi-home"></i>
+      <span>Home</span>
+    </a>
+    <a
+      class="link"
+      routerLink="/payment-orders"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <i class="pi pi-shopping-cart"></i>
+      <span>Orders</span></a
+    >
+    <a
+      class="link"
+      routerLink="/users"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <i class="pi pi-users"></i>
+      <span>Users</span></a
+    >
+  </nav>
+</div>
