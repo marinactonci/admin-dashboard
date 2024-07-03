@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { User, UserService } from '../../services/user.service';
 import {
   FormBuilder,
@@ -11,6 +11,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ButtonModule } from 'primeng/button';
 import { passwordValidator } from './password-validator';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-users',
@@ -21,7 +24,10 @@ import { passwordValidator } from './password-validator';
     InputTextModule,
     MultiSelectModule,
     ButtonModule,
+    ToastModule,
+    ConfirmDialogModule,
   ],
+  providers: [ConfirmationService, MessageService],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
 })
@@ -52,13 +58,25 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  confirmationService = inject(ConfirmationService);
+  messageService = inject(MessageService);
+
   ngOnInit(): void {
     this.loadUsers();
   }
 
   loadUsers(): void {
-    this.userService.getUsers().subscribe((users) => {
-      this.users = users;
+    this.userService.getUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+      },
+      error: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to load users',
+        });
+      },
     });
   }
 
@@ -70,14 +88,42 @@ export class UsersComponent implements OnInit {
       };
 
       if (this.isEdit && this.currentUserId !== '') {
-        this.userService.updateUser(this.currentUserId, user).subscribe(() => {
-          this.loadUsers();
-          this.resetForm();
+        this.userService.updateUser(this.currentUserId, user).subscribe({
+          next: () => {
+            this.messageService.add({
+              severity: 'info',
+              summary: 'Success',
+              detail: 'User updated',
+            });
+            this.loadUsers();
+            this.resetForm();
+          },
+          error: () => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Failed to update user',
+            });
+          },
         });
       } else {
-        this.userService.createUser(user).subscribe(() => {
-          this.loadUsers();
-          this.resetForm();
+        this.userService.createUser(user).subscribe({
+          next: () => {
+            this.messageService.add({
+              severity: 'info',
+              summary: 'Success',
+              detail: 'User created',
+            });
+            this.loadUsers();
+            this.resetForm();
+          },
+          error: () => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Failed to create user',
+            });
+          },
         });
       }
     }
@@ -89,9 +135,48 @@ export class UsersComponent implements OnInit {
     this.userForm.patchValue(user);
   }
 
+  confirmDeleteUser(event: Event, id: string) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: 'Do you want to delete this user?',
+      header: 'Delete Confirmation',
+      icon: 'pi pi-info-circle',
+      acceptButtonStyleClass: 'p-button-danger p-button-text',
+      rejectButtonStyleClass: 'p-button-text p-button-text',
+      acceptIcon: 'none',
+      rejectIcon: 'none',
+
+      accept: () => {
+        this.deleteUser(id);
+      },
+      reject: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Rejected',
+          detail: 'You have rejected',
+        });
+        this.confirmationService.close();
+      },
+    });
+  }
+
   deleteUser(id: string): void {
-    this.userService.deleteUser(id).subscribe(() => {
-      this.loadUsers();
+    this.userService.deleteUser(id).subscribe({
+      next: () => {
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Success',
+          detail: 'User deleted',
+        });
+        this.loadUsers();
+      },
+      error: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to delete user',
+        });
+      },
     });
   }
 

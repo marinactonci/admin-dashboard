@@ -1,3 +1,4 @@
+<p-toast />
 <div class="title-container">
   <h1 class="title">User Management</h1>
 </div>
@@ -110,11 +111,15 @@
           </td>
           <td class="two-buttons">
             <p-button icon="pi pi-pencil" (click)="editUser(user)" />
-            <p-button
-              icon="pi pi-times"
-              severity="danger"
-              (click)="deleteUser(user.id!)"
-            />
+            <div>
+              <p-toast />
+              <p-confirmDialog />
+              <p-button
+                icon="pi pi-times"
+                severity="danger"
+                (click)="confirmDeleteUser($event, user.id)"
+              />
+            </div>
           </td>
         </tr>
       </ng-template>
