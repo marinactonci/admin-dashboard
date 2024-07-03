@@ -40,19 +40,4 @@ export class PaymentOrderService {
   getPaymentOrderById(id: string): Observable<PaymentOrder> {
     return this.http.get<PaymentOrder>(`${this.apiUrl}/${id}`);
   }
-
-  createPaymentOrder(paymentOrder: PaymentOrder): Observable<PaymentOrder> {
-    return this.http.post<PaymentOrder>(this.apiUrl, paymentOrder);
-  }
-
-  updatePaymentOrder(
-    id: string,
-    paymentOrder: PaymentOrder
-  ): Observable<PaymentOrder> {
-    return this.http.put<PaymentOrder>(`${this.apiUrl}/${id}`, paymentOrder);
-  }
-
-  deletePaymentOrder(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
 }

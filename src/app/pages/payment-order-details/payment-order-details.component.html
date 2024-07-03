@@ -1,1 +1,106 @@
-<p>payment-order-details works!</p>
+<div class="title-container">
+  <a routerLink="/payment-orders" class="p-button link">
+    <i class="pi pi-arrow-left"></i
+  ></a>
+  <h1 class="title">Payment Order Details</h1>
+</div>
+@if (order) {
+<div class="order-detail-container">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <h3>{{ order.title }}</h3>
+        <p>{{ order.description }}</p>
+        <div class="reference">
+          <p>Reference: {{ order.paymentReference }}</p>
+        </div>
+      </div>
+      <div class="badge">{{ order.status }}</div>
+    </div>
+    <div class="card-body">
+      <h4 class="card-column-title">Payment Details</h4>
+      <div class="card-section">
+        <div class="card-column">
+          <div class="label">Amount</div>
+          <div class="value">{{ order.amount }}</div>
+        </div>
+        <div class="card-column">
+          <div class="label">Currency</div>
+          <div class="value">{{ order.currency }}</div>
+        </div>
+      </div>
+      <hr />
+      <h4 class="card-column-title">Customer Details</h4>
+      <div class="card-section">
+        <div class="card-column">
+          <div>
+            <div class="label">Name</div>
+            <div>
+              {{ order.customerData.firstName }}
+              {{ order.customerData.lastName }}
+            </div>
+          </div>
+          <div>
+            <div class="label">Phone</div>
+            <div>
+              {{ order.customerData.phoneNumber }}
+            </div>
+          </div>
+        </div>
+        <div class="card-column">
+          <div>
+            <div class="label">Email</div>
+            <div>
+              {{ order.customerData.email }}
+            </div>
+          </div>
+          <div>
+            <div class="label">Address</div>
+            <div>{{ order.customerData.streetAddress }}</div>
+            <div>
+              {{ order.customerData.city }}, {{ order.customerData.postalCode }}
+            </div>
+            <div>{{ order.customerData.country }}</div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <h4 class="card-column-title">Order Details</h4>
+      <div class="card-section">
+        <div class="card-column">
+          <div>
+            <div class="label">Created On</div>
+            <div>
+              {{ order.createdOn | date }}
+            </div>
+          </div>
+          @if(order.status === 'Successful') {
+          <div>
+            <div class="label">Paid On</div>
+            <div>
+              {{ order.paidOn | date }}
+            </div>
+          </div>
+          }
+        </div>
+        @if(order.status === 'Successful') {
+        <div class="card-column">
+          <div>
+            <div class="label">Authorization Code</div>
+            <div>
+              {{ order.authorizationCode }}
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+} @else {
+<div>
+  <h2>Payment Order Details</h2>
+  <p>No payment order selected</p>
+</div>
+}

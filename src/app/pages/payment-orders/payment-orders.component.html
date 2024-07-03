@@ -2,5 +2,32 @@
   <h1 class="title">Payment Orders</h1>
 </div>
 <div class="order-container">
-  <p>payment-orders works!</p>
+  <p-table [value]="paymentOrders" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="paymentReference">Payment Reference</th>
+        <th pSortableColumn="title">Title</th>
+        <th pSortableColumn="status">Status</th>
+        <th pSortableColumn="amount">Amount</th>
+        <th pSortableColumn="currency">Currency</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-order>
+      <tr>
+        <td>{{ order.paymentReference }}</td>
+        <td>{{ order.title }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.amount }}</td>
+        <td>{{ order.currency }}</td>
+        <td>
+          <p-button
+            type="button"
+            icon="pi pi-external-link"
+            (click)="viewDetails(order)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>

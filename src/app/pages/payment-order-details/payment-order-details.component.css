@@ -1,0 +1,106 @@
+.title-container {
+    padding: 30px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .link {
+        text-decoration: none;
+    }
+}
+
+.title {
+    margin: 0;
+}
+
+.order-detail-container {
+    padding: 20px;
+    margin: 20px;
+
+    .mt {
+        margin-top: 30px;
+    }
+}
+
+.card {
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #1a202c;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background-color: #ebebeb;
+
+        .card-title h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card-title p{
+            font-size: 0.875rem;
+            color: #718096;
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.625rem;
+            border-radius: 9999px;
+            background-color: #3182ce;
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+
+            &&:hover {
+                background-color: #2b6cb0;
+            }
+        }
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        display: grid;
+        gap: 1.5rem;
+
+        .card-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .card-column-title {
+            margin: 0;
+        }
+
+        .card-column {
+            display: grid;
+            gap: 0.5rem;
+
+            .label {
+                color: #718096;
+            }
+
+            .value {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    width: 100%;
+}
