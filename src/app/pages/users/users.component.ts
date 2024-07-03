@@ -69,7 +69,7 @@ export class UsersComponent implements OnInit {
         createdOn: new Date(),
       };
 
-      if (this.isEdit && this.currentUserId !== null) {
+      if (this.isEdit && this.currentUserId !== '') {
         this.userService.updateUser(this.currentUserId, user).subscribe(() => {
           this.loadUsers();
           this.resetForm();

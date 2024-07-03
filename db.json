@@ -2,13 +2,58 @@
   "paymentOrders": [],
   "users": [
     {
-      "id": "1c18",
       "firstName": "Tonči",
       "lastName": "Marinac",
       "email": "toncimarinac@gmail.com",
       "password": "9X7ArMtV!",
+      "roles": [
+        "Administrator",
+        "Customer"
+      ],
+      "createdOn": "2024-07-03T01:03:51.886Z",
+      "id": "1c18"
+    },
+    {
+      "id": "cb21",
+      "firstName": "Elvir",
+      "lastName": "Tursunović",
+      "email": "elvirtursunovic@gmail.com",
+      "password": "9X7ArMtV!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-07-03T00:58:54.030Z"
+    },
+    {
+      "id": "b482",
+      "firstName": "Matija",
+      "lastName": "Merle",
+      "email": "matijamerle@gmail.com",
+      "password": "9X7ArMtV!",
+      "roles": [
+        "Administrator"
+      ],
+      "createdOn": "2024-07-03T00:59:12.121Z"
+    },
+    {
+      "id": "17d4",
+      "firstName": "Luka",
+      "lastName": "Harbaš",
+      "email": "lukaharbas@gmail.com",
+      "password": "9X7ArMtV!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-07-03T00:59:50.764Z"
+    },
+    {
+      "firstName": "Vedran",
+      "lastName": "Vila",
+      "email": "vedranvila@gmail.com",
+      "password": "9X7ArMtV!",
       "roles": [],
-      "createdOn": "2024-07-02T23:03:13.738Z"
+      "createdOn": "2024-07-03T01:06:30.076Z",
+      "id": "4cbd"
     }
   ]
 }
