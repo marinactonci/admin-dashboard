@@ -1,0 +1,37 @@
+.main-container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+
+    input {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%; 
+        display: flex; 
+        justify-content: center;
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.login-container .error-message {
+    color: #e53e3e;
+    text-align: center;
+    margin-top: 1rem;
+}

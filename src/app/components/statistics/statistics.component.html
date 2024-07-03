@@ -1,1 +1,29 @@
-<p>statistics works!</p>
+<div class="statistics-container">
+  <p-card
+    class="transaction-chart"
+    header="Number of successful transactions in the last 30 days"
+  >
+    <p-chart
+      type="line"
+      [data]="transactionChartData"
+      [options]="transactionChartOptions"
+    />
+  </p-card>
+  <p-card class="users-chart" header="Number of users in the last 30 days">
+    <p-chart
+      type="line"
+      [data]="usersChartData"
+      [options]="usersChartOptions"
+    />
+  </p-card>
+  <p-card
+    class="payment-chart"
+    header="Payment status distribution in the last 30 days"
+  >
+    <p-chart
+      type="pie"
+      [data]="paymentStatusChartData"
+      [options]="paymentStatusChartOptions"
+    />
+  </p-card>
+</div>

@@ -1,0 +1,26 @@
+<div class="main-container">
+  <p-card class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <p-floatLabel>
+        <input id="email" pInputText formControlName="email" type="email" />
+        <label for="email">Email</label>
+      </p-floatLabel>
+      <p-floatLabel>
+        <input
+          id="password"
+          pInputText
+          formControlName="password"
+          type="password"
+        />
+        <label for="password">Password</label>
+      </p-floatLabel>
+      <button pButton>
+        <div class="btn">Login</div>
+      </button>
+    </form>
+    @if (errorMessage) {
+    <div class="error-message">{{ errorMessage }}</div>
+    }
+  </p-card>
+</div>

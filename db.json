@@ -4,9 +4,9 @@
       "id": "1",
       "paymentReference": "PAY123456",
       "title": "Order #1",
-      "description": "Payment for Order #1",
+      "description": "Payment for monthly subscription",
       "status": "Successful",
-      "amount": 100.50,
+      "amount": 100.5,
       "currency": "USD",
       "customerData": {
         "firstName": "John",
@@ -18,8 +18,8 @@
         "city": "Springfield",
         "country": "USA"
       },
-      "createdOn": "2023-06-15T08:00:00Z",
-      "paidOn": "2023-06-16T08:00:00Z",
+      "createdOn": "2024-06-15T08:00:00Z",
+      "paidOn": "2024-06-16T08:00:00Z",
       "authorizationCode": "AUTH123456"
     },
     {
@@ -40,7 +40,7 @@
         "city": "Metropolis",
         "country": "Germany"
       },
-      "createdOn": "2023-06-17T09:00:00Z"
+      "createdOn": "2024-06-17T09:00:00Z"
     },
     {
       "id": "3",
@@ -48,7 +48,7 @@
       "title": "Order #3",
       "description": "Payment for Order #3",
       "status": "Unsuccessful",
-      "amount": 150.00,
+      "amount": 150,
       "currency": "GBP",
       "customerData": {
         "firstName": "Alice",
@@ -60,7 +60,7 @@
         "city": "Gotham",
         "country": "UK"
       },
-      "createdOn": "2023-06-18T10:00:00Z"
+      "createdOn": "2024-06-18T10:00:00Z"
     },
     {
       "id": "4",
@@ -80,8 +80,8 @@
         "city": "Star City",
         "country": "Canada"
       },
-      "createdOn": "2023-06-19T11:00:00Z",
-      "paidOn": "2023-06-20T11:00:00Z",
+      "createdOn": "2024-06-19T11:00:00Z",
+      "paidOn": "2024-06-20T11:00:00Z",
       "authorizationCode": "AUTH123457"
     },
     {
@@ -90,7 +90,7 @@
       "title": "Order #5",
       "description": "Payment for Order #5",
       "status": "Created",
-      "amount": 300.40,
+      "amount": 300.4,
       "currency": "AUD",
       "customerData": {
         "firstName": "Charlie",
@@ -102,63 +102,397 @@
         "city": "Central City",
         "country": "Australia"
       },
-      "createdOn": "2023-06-20T12:00:00Z"
+      "createdOn": "2024-06-20T12:00:00Z"
+    },
+    {
+      "id": "6",
+      "paymentReference": "PAY123461",
+      "title": "Order #6",
+      "description": "Payment for Order #6",
+      "status": "Successful",
+      "amount": 120.75,
+      "currency": "USD",
+      "customerData": {
+        "firstName": "Eve",
+        "lastName": "Adams",
+        "email": "eve.adams@example.com",
+        "phoneNumber": "+4455667788",
+        "streetAddress": "111 Maple St",
+        "postalCode": "22334",
+        "city": "Smallville",
+        "country": "USA"
+      },
+      "createdOn": "2024-06-21T13:00:00Z",
+      "paidOn": "2024-06-21T13:30:00Z",
+      "authorizationCode": "AUTH123458"
+    },
+    {
+      "id": "7",
+      "paymentReference": "PAY123462",
+      "title": "Order #7",
+      "description": "Payment for Order #7",
+      "status": "Unsuccessful",
+      "amount": 210.5,
+      "currency": "EUR",
+      "customerData": {
+        "firstName": "Frank",
+        "lastName": "Miller",
+        "email": "frank.miller@example.com",
+        "phoneNumber": "+9988771122",
+        "streetAddress": "222 Willow St",
+        "postalCode": "33556",
+        "city": "Rivertown",
+        "country": "Germany"
+      },
+      "createdOn": "2024-06-22T14:00:00Z"
+    },
+    {
+      "id": "8",
+      "paymentReference": "PAY123463",
+      "title": "Order #8",
+      "description": "Payment for Order #8",
+      "status": "Successful",
+      "amount": 95,
+      "currency": "GBP",
+      "customerData": {
+        "firstName": "Grace",
+        "lastName": "Lee",
+        "email": "grace.lee@example.com",
+        "phoneNumber": "+3344556677",
+        "streetAddress": "333 Birch St",
+        "postalCode": "44667",
+        "city": "Seaside",
+        "country": "UK"
+      },
+      "createdOn": "2024-06-23T15:00:00Z",
+      "paidOn": "2024-06-23T15:15:00Z",
+      "authorizationCode": "AUTH123459"
+    },
+    {
+      "id": "9",
+      "paymentReference": "PAY123464",
+      "title": "Order #9",
+      "description": "Payment for Order #9",
+      "status": "Created",
+      "amount": 180.25,
+      "currency": "CAD",
+      "customerData": {
+        "firstName": "Hank",
+        "lastName": "Morgan",
+        "email": "hank.morgan@example.com",
+        "phoneNumber": "+6677889900",
+        "streetAddress": "444 Cedar St",
+        "postalCode": "55778",
+        "city": "Mountainview",
+        "country": "Canada"
+      },
+      "createdOn": "2024-06-24T16:00:00Z"
+    },
+    {
+      "id": "10",
+      "paymentReference": "PAY123465",
+      "title": "Order #10",
+      "description": "Payment for Order #10",
+      "status": "Successful",
+      "amount": 135.8,
+      "currency": "AUD",
+      "customerData": {
+        "firstName": "Ivy",
+        "lastName": "Carter",
+        "email": "ivy.carter@example.com",
+        "phoneNumber": "+2233445566",
+        "streetAddress": "555 Oak St",
+        "postalCode": "66889",
+        "city": "Riverdale",
+        "country": "Australia"
+      },
+      "createdOn": "2024-06-25T17:00:00Z",
+      "paidOn": "2024-06-25T17:20:00Z",
+      "authorizationCode": "AUTH123460"
+    },
+    {
+      "id": "11",
+      "paymentReference": "PAY123466",
+      "title": "Order #11",
+      "description": "Payment for Order #11",
+      "status": "Successful",
+      "amount": 150,
+      "currency": "USD",
+      "customerData": {
+        "firstName": "Jack",
+        "lastName": "Frost",
+        "email": "jack.frost@example.com",
+        "phoneNumber": "+1122334455",
+        "streetAddress": "666 Pine St",
+        "postalCode": "77990",
+        "city": "Frostburg",
+        "country": "USA"
+      },
+      "createdOn": "2024-06-26T18:00:00Z",
+      "paidOn": "2024-06-26T18:30:00Z",
+      "authorizationCode": "AUTH123461"
+    },
+    {
+      "id": "12",
+      "paymentReference": "PAY123467",
+      "title": "Order #12",
+      "description": "Payment for Order #12",
+      "status": "Unsuccessful",
+      "amount": 175.5,
+      "currency": "EUR",
+      "customerData": {
+        "firstName": "Kelly",
+        "lastName": "Snow",
+        "email": "kelly.snow@example.com",
+        "phoneNumber": "+5566778899",
+        "streetAddress": "777 Willow St",
+        "postalCode": "88991",
+        "city": "Snowtown",
+        "country": "Germany"
+      },
+      "createdOn": "2024-06-27T19:00:00Z"
+    },
+    {
+      "id": "13",
+      "paymentReference": "PAY123468",
+      "title": "Order #13",
+      "description": "Payment for Order #13",
+      "status": "Successful",
+      "amount": 90,
+      "currency": "GBP",
+      "customerData": {
+        "firstName": "Leo",
+        "lastName": "Winter",
+        "email": "leo.winter@example.com",
+        "phoneNumber": "+9988776655",
+        "streetAddress": "888 Maple St",
+        "postalCode": "99101",
+        "city": "Winterfell",
+        "country": "UK"
+      },
+      "createdOn": "2024-06-28T20:00:00Z",
+      "paidOn": "2024-06-28T20:10:00Z",
+      "authorizationCode": "AUTH123462"
+    },
+    {
+      "id": "14",
+      "paymentReference": "PAY123469",
+      "title": "Order #14",
+      "description": "Payment for Order #14",
+      "status": "Created",
+      "amount": 110.25,
+      "currency": "CAD",
+      "customerData": {
+        "firstName": "Mia",
+        "lastName": "Autumn",
+        "email": "mia.autumn@example.com",
+        "phoneNumber": "+3344556677",
+        "streetAddress": "999 Cedar St",
+        "postalCode": "11012",
+        "city": "Autumndale",
+        "country": "Canada"
+      },
+      "createdOn": "2024-06-29T21:00:00Z"
+    },
+    {
+      "id": "15",
+      "paymentReference": "PAY123470",
+      "title": "Order #15",
+      "description": "Payment for Order #15",
+      "status": "Successful",
+      "amount": 95.75,
+      "currency": "AUD",
+      "customerData": {
+        "firstName": "Nina",
+        "lastName": "Spring",
+        "email": "nina.spring@example.com",
+        "phoneNumber": "+2233445566",
+        "streetAddress": "1010 Birch St",
+        "postalCode": "12123",
+        "city": "Springfield",
+        "country": "Australia"
+      },
+      "createdOn": "2024-06-30T22:00:00Z",
+      "paidOn": "2024-06-30T22:15:00Z",
+      "authorizationCode": "AUTH123463"
     }
   ],
   "users": [
     {
-      "firstName": "Tonči",
-      "lastName": "Marinac",
-      "email": "toncimarinac@gmail.com",
-      "password": "9X7ArMtV!",
-      "roles": [
-        "Administrator",
-        "Customer"
-      ],
-      "createdOn": "2024-07-03T01:03:51.886Z",
-      "id": "1c18"
-    },
-    {
-      "id": "cb21",
-      "firstName": "Elvir",
-      "lastName": "Tursunović",
-      "email": "elvirtursunovic@gmail.com",
-      "password": "9X7ArMtV!",
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "password": "Password123!",
       "roles": [
         "Customer"
       ],
-      "createdOn": "2024-07-03T00:58:54.030Z"
+      "createdOn": "2024-06-01T12:00:00Z"
     },
     {
-      "id": "b482",
-      "firstName": "Matija",
-      "lastName": "Merle",
-      "email": "matijamerle@gmail.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-07-03T19:04:27.816Z",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-10T10:15:00Z"
+    },
+    {
+      "id": "4",
+      "firstName": "Bob",
+      "lastName": "Brown",
+      "email": "bob.brown@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-15T08:00:00Z"
+    },
+    {
+      "id": "5",
+      "firstName": "Charlie",
+      "lastName": "Davis",
+      "email": "charlie.davis@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-20T12:00:00Z"
+    },
+    {
+      "id": "6",
+      "firstName": "Eve",
+      "lastName": "Adams",
+      "email": "eve.adams@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-21T13:00:00Z"
+    },
+    {
+      "id": "7",
+      "firstName": "Frank",
+      "lastName": "Miller",
+      "email": "frank.miller@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-22T14:00:00Z"
+    },
+    {
+      "id": "8",
+      "firstName": "Grace",
+      "lastName": "Lee",
+      "email": "grace.lee@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-23T15:00:00Z"
+    },
+    {
+      "id": "9",
+      "firstName": "Hank",
+      "lastName": "Morgan",
+      "email": "hank.morgan@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-24T16:00:00Z"
+    },
+    {
+      "id": "10",
+      "firstName": "Ivy",
+      "lastName": "Carter",
+      "email": "ivy.carter@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-25T17:00:00Z"
+    },
+    {
+      "id": "11",
+      "firstName": "Jack",
+      "lastName": "Frost",
+      "email": "jack.frost@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-26T18:00:00Z"
+    },
+    {
+      "id": "12",
+      "firstName": "Kelly",
+      "lastName": "Snow",
+      "email": "kelly.snow@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-27T19:00:00Z"
+    },
+    {
+      "id": "13",
+      "firstName": "Leo",
+      "lastName": "Winter",
+      "email": "leo.winter@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-28T20:00:00Z"
+    },
+    {
+      "id": "14",
+      "firstName": "Mia",
+      "lastName": "Autumn",
+      "email": "mia.autumn@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-29T21:00:00Z"
+    },
+    {
+      "id": "15",
+      "firstName": "Nina",
+      "lastName": "Spring",
+      "email": "nina.spring@example.com",
+      "password": "Password123!",
+      "roles": [
+        "Customer"
+      ],
+      "createdOn": "2024-06-30T22:00:00Z"
+    },
+    {
+      "id": "3ad5",
+      "firstName": "admin",
+      "lastName": "admin",
+      "email": "admin@mail.com",
       "password": "9X7ArMtV!",
       "roles": [
         "Administrator"
       ],
-      "createdOn": "2024-07-03T00:59:12.121Z"
-    },
-    {
-      "id": "17d4",
-      "firstName": "Luka",
-      "lastName": "Harbaš",
-      "email": "lukaharbas@gmail.com",
-      "password": "9X7ArMtV!",
-      "roles": [
-        "Customer"
-      ],
-      "createdOn": "2024-07-03T00:59:50.764Z"
-    },
-    {
-      "id": "e39d",
-      "firstName": "Vedran",
-      "lastName": "Vila",
-      "email": "vedranvila@gmail.com",
-      "password": "9X7ArMtV!",
-      "roles": [],
-      "createdOn": "2024-07-03T10:54:33.678Z"
+      "createdOn": "2024-07-03T19:22:15.464Z"
     }
   ]
 }

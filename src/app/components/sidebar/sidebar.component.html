@@ -31,5 +31,14 @@
       <i class="pi pi-users"></i>
       <span>Users</span></a
     >
+    @if (!(isLoggedIn | async)) {
+    <button pButton routerLink="/login">
+      <div class="btn">Login</div>
+    </button>
+    } @else {
+    <button pButton (click)="logout()">
+      <div class="btn">Logout</div>
+    </button>
+    }
   </nav>
 </div>

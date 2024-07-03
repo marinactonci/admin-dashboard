@@ -29,6 +29,12 @@
     flex-direction: column;
     gap: 10px;
 
+    .btn {
+      width: 100%; 
+      display: flex; 
+      justify-content: center
+    }
+
     .link {
       text-decoration: none;
       font-size: 22px;
