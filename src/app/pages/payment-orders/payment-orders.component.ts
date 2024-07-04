@@ -8,17 +8,20 @@ import { MessageService } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-payment-orders',
   standalone: true,
-  imports: [ToastModule, TableModule, ButtonModule],
+  imports: [ToastModule, TableModule, ButtonModule, InputTextModule],
   providers: [MessageService],
   templateUrl: './payment-orders.component.html',
   styleUrl: './payment-orders.component.css',
 })
 export class PaymentOrdersComponent implements OnInit {
   paymentOrders: PaymentOrder[] = [];
+  sortField: string = '';
+  sortOrder: number = 1;
 
   paymentOrderService = inject(PaymentOrderService);
   messageService = inject(MessageService);
@@ -41,6 +44,20 @@ export class PaymentOrdersComponent implements OnInit {
         });
       },
     });
+  }
+
+  applyGlobalFilter(event: Event, dt: any): void {
+    const input = event.target as HTMLInputElement;
+    if (input) {
+      dt.filterGlobal(input.value, 'contains');
+    }
+  }
+
+  applyColumnFilter(event: Event, field: string, dt: any): void {
+    const input = event.target as HTMLInputElement;
+    if (input) {
+      dt.filter(input.value, field, 'contains');
+    }
   }
 
   viewDetails(order: PaymentOrder): void {
