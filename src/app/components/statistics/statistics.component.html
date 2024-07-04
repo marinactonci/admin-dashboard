@@ -1,25 +1,19 @@
 <div class="statistics-container">
-  <p-card
-    class="transaction-chart"
-    header="Number of successful transactions in the last 30 days"
-  >
+  <p-card class="transaction-chart" header="Number of successful transactions">
     <p-chart
       type="line"
       [data]="transactionChartData"
       [options]="transactionChartOptions"
     />
   </p-card>
-  <p-card class="users-chart" header="Number of users in the last 30 days">
+  <p-card class="users-chart" header="Number of users">
     <p-chart
       type="line"
       [data]="usersChartData"
       [options]="usersChartOptions"
     />
   </p-card>
-  <p-card
-    class="payment-chart"
-    header="Payment status distribution in the last 30 days"
-  >
+  <p-card class="payment-chart" header="Payment status distribution">
     <p-chart
       type="pie"
       [data]="paymentStatusChartData"

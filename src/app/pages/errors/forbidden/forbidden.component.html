@@ -1,1 +1,20 @@
-<p>forbidden works!</p>
+<div class="container">
+  <div class="forbidden-container">
+    <i class="pi pi-exclamation-triangle"></i>
+    <h1>403 - Forbidden</h1>
+    <p>
+      You don't have permission to access this page. Login with an admin
+      account!
+    </p>
+    <div>
+      <button
+        pButton
+        routerLink="/login"
+        class="p-button font-bold"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</div>

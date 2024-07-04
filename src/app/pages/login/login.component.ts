@@ -39,7 +39,7 @@ export class LoginComponent {
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
@@ -48,7 +48,7 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password).subscribe((success) => {
         if (success) {
-          this.cd.detectChanges(); // Manually trigger change detection if needed
+          this.cd.detectChanges();
           this.router.navigate(['/home']);
         } else {
           this.errorMessage = 'Invalid email or password';
