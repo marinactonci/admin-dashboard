@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 export interface PaymentOrder {
   id: string;
@@ -33,11 +33,25 @@ export class PaymentOrderService {
 
   http = inject(HttpClient);
 
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error);
+    if (error.error instanceof ErrorEvent) {
+      console.error('Client-side or network error:', error.error.message);
+    } else {
+      console.error(`Backend returned code ${error.status}, body was:`, error.error);
+    }
+    return throwError(() => new Error('Something bad happened; please try again later.'));
+  }
+
   getPaymentOrders(): Observable<PaymentOrder[]> {
-    return this.http.get<PaymentOrder[]>(this.apiUrl);
+    return this.http.get<PaymentOrder[]>(this.apiUrl).pipe(
+      catchError(this.handleError)
+    );
   }
 
   getPaymentOrderById(id: string): Observable<PaymentOrder> {
-    return this.http.get<PaymentOrder>(`${this.apiUrl}/${id}`);
+    return this.http.get<PaymentOrder>(`${this.apiUrl}/${id}`).pipe(
+      catchError(this.handleError)
+    );
   }
 }

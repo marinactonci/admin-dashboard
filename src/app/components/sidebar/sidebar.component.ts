@@ -14,10 +14,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  isLoggedIn: Observable<boolean>;
+  isLoggedIn: boolean = false;
 
   constructor(private auth: AuthService, private router: Router) {
-    this.isLoggedIn = this.auth.currentUser.pipe(map((user) => !!user));
+    this.auth.currentUser.subscribe((user) => {
+      this.isLoggedIn = !!user;
+    });
   }
 
   logout(): void {

@@ -493,6 +493,18 @@
         "Administrator"
       ],
       "createdOn": "2024-07-03T19:22:15.464Z"
+    },
+    {
+      "id": "a6f6",
+      "firstName": "Tonči",
+      "lastName": "Marinac",
+      "email": "toncimarinac@gmail.com",
+      "password": "9X7ArMtV!",
+      "roles": [
+        "Administrator",
+        "Customer"
+      ],
+      "createdOn": "2024-07-15T11:19:12.214Z"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
 
 export interface User {
   id: string;
@@ -20,23 +20,43 @@ export class UserService {
 
   http = inject(HttpClient);
 
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error);
+    if (error.error instanceof ErrorEvent) {
+      console.error('Client-side or network error:', error.error.message);
+    } else {
+      console.error(`Backend returned code ${error.status}, body was:`, error.error);
+    }
+    return throwError(() => new Error('Something bad happened; please try again later.'));
+  }
+
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      catchError(this.handleError)
+    );
   }
 
   getUserById(id: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`);
+    return this.http.get<User>(`${this.apiUrl}/${id}`).pipe(
+      catchError(this.handleError)
+    );
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    return this.http.post<User>(this.apiUrl, user).pipe(
+      catchError(this.handleError)
+    );
   }
 
   updateUser(id: string, user: User): Observable<User> {
-    return this.http.put<User>(`${this.apiUrl}/${id}`, user);
+    return this.http.put<User>(`${this.apiUrl}/${id}`, user).pipe(
+      catchError(this.handleError)
+    );
   }
 
   deleteUser(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
+      catchError(this.handleError)
+    );
   }
 }

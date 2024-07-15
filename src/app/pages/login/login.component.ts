@@ -48,7 +48,6 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password).subscribe((success) => {
         if (success) {
-          this.cd.detectChanges();
           this.router.navigate(['/home']);
         } else {
           this.errorMessage = 'Invalid email or password';
