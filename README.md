@@ -62,7 +62,7 @@ The application manages two main entities:
 - **Users**: Customer and Administrator accounts with role-based permissions
 - **Payment Orders**: Transaction records with customer data, payment status, and order details
 
-## Prerequisites
+## 📋 Prerequisites
 
 Before you can run this application, make sure you have the following installed:
 
@@ -70,7 +70,7 @@ Before you can run this application, make sure you have the following installed:
 - npm (version 10.8.1)
 - Angular CLI (version 18.0.6)
 
-## Installation
+## 📦 Installation
 
 1. **Clone the repository**:
 
@@ -91,7 +91,7 @@ npm install
 npm install -g json-server
 ```
 
-## Running the Application
+## 🚀 Running the Application
 
 1. **Start JSON Server**:
 
@@ -121,7 +121,7 @@ Open your web browser and navigate to:
 http://localhost:4200
 ```
 
-## Usage
+## 💻 Usage
 
 **Login**:
 
